@@ -1,4 +1,6 @@
 bin/
 obj/
 .vs/
+.scannerwork
 StyleCop.Cache
+sonar-project.properties
