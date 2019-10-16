@@ -3,3 +3,4 @@ obj/
 .vs/
 StyleCop.Cache
 sonar-project.properties
+.scannerwork
