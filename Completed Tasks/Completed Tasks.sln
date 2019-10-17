@@ -9,7 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Training2", "Training2\Trai
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Training2Tests", "Training2Tests\Training2Tests.csproj", "{C50DD5BA-52D9-4ADB-A3B1-96DEB5C42F88}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpecifiedExceptions", "SpecifiedExceptions\SpecifiedExceptions.csproj", "{5A03730E-8A9F-43E4-BD01-6391B4D50340}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SpecifiedExceptions", "SpecifiedExceptions\SpecifiedExceptions.csproj", "{5A03730E-8A9F-43E4-BD01-6391B4D50340}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Logger", "Logger\Logger.csproj", "{F025A934-76DC-4E9E-AD50-9D2F2FCA7157}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{5A03730E-8A9F-43E4-BD01-6391B4D50340}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5A03730E-8A9F-43E4-BD01-6391B4D50340}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5A03730E-8A9F-43E4-BD01-6391B4D50340}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F025A934-76DC-4E9E-AD50-9D2F2FCA7157}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F025A934-76DC-4E9E-AD50-9D2F2FCA7157}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F025A934-76DC-4E9E-AD50-9D2F2FCA7157}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F025A934-76DC-4E9E-AD50-9D2F2FCA7157}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

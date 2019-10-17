@@ -7,25 +7,31 @@ namespace Training2Tests
     [TestFixture]
     public class Tests
     {
+        Person Valik;
+        int personAge = 21;
 
-        Person Valik = new Person() { Name = "Valentyn", Age = 21, Surname = "Prysiazhniuk" };
-
+        [SetUp]
+        public void Setup()
+        {
+            Valik = new Person() { Name = "Valentyn", Age = personAge, Surname = "Prysiazhniuk" };
+        }
+        
         [Test]
         public void CompareWithHigherAgeTest()
         {
-            Assert.AreEqual($"Valentyn Prysiazhniuk younger than 22", Valik.CompareWithAge(22));
+            Assert.AreEqual($"Valentyn Prysiazhniuk younger than {personAge + 1}", Valik.CompareWithAge(personAge + 1));
         }
 
         [Test]
         public void CompareWithLowerAgeTest()
         {
-            Assert.AreEqual($"Valentyn Prysiazhniuk older than 20", Valik.CompareWithAge(20));
+            Assert.AreEqual($"Valentyn Prysiazhniuk older than {personAge - 1}", Valik.CompareWithAge(personAge - 1));
         }
 
         [Test]
         public void InvalidArgumentExceptionTest()
         {
-            Assert.Throws<InvalidArgimentException>(()=>Valik.CompareWithAge(-2), "Invalid compare age");
+            Assert.Throws<InvalidArgumentException>(()=>Valik.CompareWithAge(-2), "Invalid compare age");
         }
     }
 }

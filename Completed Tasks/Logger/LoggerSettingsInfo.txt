@@ -1,0 +1,9 @@
+﻿logSource Available Options (NOT Case Sensetive): 
+	File - write log info into log.txt file located in logFilePath
+	Console - print log info into console
+detalizationLevel Available Options: 
+	0 - log only error message
+	1 - log error message, Exception source and Exception target site
+	2 - log error message, Exception source and Exception target site, Exception stack trace and Exception HResult
+	(values bigger than 2 will be considered as 2)",
+  

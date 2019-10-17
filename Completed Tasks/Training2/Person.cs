@@ -16,7 +16,7 @@
             }
             else
             {
-                throw new InvalidArgimentException("Invalid compare age");
+                throw new InvalidArgumentException("Invalid compare age");
             }
         }
     }
