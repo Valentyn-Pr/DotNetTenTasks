@@ -11,7 +11,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Training2Tests", "Training2
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SpecifiedExceptions", "SpecifiedExceptions\SpecifiedExceptions.csproj", "{5A03730E-8A9F-43E4-BD01-6391B4D50340}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Logger", "Logger\Logger.csproj", "{F025A934-76DC-4E9E-AD50-9D2F2FCA7157}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Logger", "Logger\Logger.csproj", "{F025A934-76DC-4E9E-AD50-9D2F2FCA7157}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Training3", "Training3\Training3.csproj", "{61A8B804-922C-4F10-9DF6-1F44323184B7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Training3Tests", "Training3Tests\Training3Tests.csproj", "{D8F93C66-4569-49BE-88A1-0ED6E374BBE6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +43,14 @@ Global
 		{F025A934-76DC-4E9E-AD50-9D2F2FCA7157}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F025A934-76DC-4E9E-AD50-9D2F2FCA7157}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F025A934-76DC-4E9E-AD50-9D2F2FCA7157}.Release|Any CPU.Build.0 = Release|Any CPU
+		{61A8B804-922C-4F10-9DF6-1F44323184B7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{61A8B804-922C-4F10-9DF6-1F44323184B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{61A8B804-922C-4F10-9DF6-1F44323184B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{61A8B804-922C-4F10-9DF6-1F44323184B7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D8F93C66-4569-49BE-88A1-0ED6E374BBE6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D8F93C66-4569-49BE-88A1-0ED6E374BBE6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D8F93C66-4569-49BE-88A1-0ED6E374BBE6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D8F93C66-4569-49BE-88A1-0ED6E374BBE6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

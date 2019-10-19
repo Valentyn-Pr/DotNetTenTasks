@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Training2
 {
-    struct Rectangle : ISize, ICoordinates
+    public struct Rectangle : ISize, ICoordinates
     {
         public float Witdh { get;  }
         public float Height { get;  }
