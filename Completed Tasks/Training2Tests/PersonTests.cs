@@ -5,13 +5,13 @@ namespace Training2Tests
 {
 
     [TestFixture]
-    public class Tests
+    public class PersonTests
     {
         Person Valik;
         int personAge = 21;
 
         [SetUp]
-        public void Setup()
+        public void PersonSetup()
         {
             Valik = new Person() { Name = "Valentyn", Age = personAge, Surname = "Prysiazhniuk" };
         }
@@ -31,7 +31,7 @@ namespace Training2Tests
         [Test]
         public void InvalidArgumentExceptionTest()
         {
-            Assert.Throws<InvalidArgumentException>(()=>Valik.CompareWithAge(-2), "Invalid compare age");
+            Assert.Throws<InvalidArgumentException>( () => Valik.CompareWithAge(-2), "Invalid compare age" );
         }
     }
 }

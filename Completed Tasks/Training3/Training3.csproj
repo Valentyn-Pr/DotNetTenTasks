@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.0</TargetFramework>
@@ -6,10 +6,7 @@
 
   <ItemGroup>
     <PackageReference Include="NLog" Version="4.6.7" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\SpecifiedExceptions\SpecifiedExceptions.csproj" />
+    <PackageReference Include="NLog.Config" Version="4.6.7" />
   </ItemGroup>
 
 </Project>

@@ -7,8 +7,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="NLog" Version="4.6.7" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\Logger\Logger.csproj" />
     <ProjectReference Include="..\Training2\Training2.csproj" />
+    <ProjectReference Include="..\Training3\Training3.csproj" />
   </ItemGroup>
 
 </Project>
