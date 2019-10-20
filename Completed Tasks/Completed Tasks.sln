@@ -13,9 +13,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SpecifiedExceptions", "Spec
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Logger", "Logger\Logger.csproj", "{F025A934-76DC-4E9E-AD50-9D2F2FCA7157}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Training3", "Training3\Training3.csproj", "{61A8B804-922C-4F10-9DF6-1F44323184B7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Training3", "Training3\Training3.csproj", "{61A8B804-922C-4F10-9DF6-1F44323184B7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Training3Tests", "Training3Tests\Training3Tests.csproj", "{D8F93C66-4569-49BE-88A1-0ED6E374BBE6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Training3Tests", "Training3Tests\Training3Tests.csproj", "{D8F93C66-4569-49BE-88A1-0ED6E374BBE6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Training4", "Training4\Training4.csproj", "{20D13BA3-C225-48D6-9C95-83CA529ACA0E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +53,10 @@ Global
 		{D8F93C66-4569-49BE-88A1-0ED6E374BBE6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D8F93C66-4569-49BE-88A1-0ED6E374BBE6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D8F93C66-4569-49BE-88A1-0ED6E374BBE6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{20D13BA3-C225-48D6-9C95-83CA529ACA0E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{20D13BA3-C225-48D6-9C95-83CA529ACA0E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{20D13BA3-C225-48D6-9C95-83CA529ACA0E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{20D13BA3-C225-48D6-9C95-83CA529ACA0E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

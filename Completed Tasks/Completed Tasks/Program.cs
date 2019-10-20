@@ -1,7 +1,7 @@
 ﻿using System;
 using Microsoft.Extensions.Configuration;
-using Training2;
-using Training3;
+using System.IO;
+using Training4;
 
 namespace Completed_Taks
 {
@@ -9,7 +9,9 @@ namespace Completed_Taks
     {
         static void Main(string[] args)
         {
-            
+            var qwerty = new DirectoryInfoReader();
+            qwerty.GetAllDirectoryInfo(@"C:\Users\Valentyn\Desktop\gitHUB");
+
         }
     }
 }
