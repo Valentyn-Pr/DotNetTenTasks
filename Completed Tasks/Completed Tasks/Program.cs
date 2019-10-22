@@ -1,7 +1,7 @@
 ﻿using System;
-using Microsoft.Extensions.Configuration;
 using System.IO;
 using Training4;
+using Training6;
 
 namespace Completed_Taks
 {
@@ -9,9 +9,7 @@ namespace Completed_Taks
     {
         static void Main(string[] args)
         {
-            var qwerty = new DirectoryInfoReader();
-            qwerty.GetAllDirectoryInfo(@"C:\Users\Valentyn\Desktop\gitHUB");
-
+            FileSearcher.SearchTxtFile("mac", @"C:\Users\Valentyn\Desktop");
         }
     }
 }
