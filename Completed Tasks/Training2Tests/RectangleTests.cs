@@ -3,11 +3,9 @@ using Training2;
 
 namespace Training2Tests
 {
-
     [TestFixture]
     public class RectangleTests
     {
-
         [Test]
         public void GetPerimetrTest()
         {

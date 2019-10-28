@@ -15,10 +15,10 @@ namespace Training2
         {
             if (witdh > 0 && height > 0)
             {
-                this.XCoordinate = x;
-                this.YCoordinate = y;
-                this.Witdh = witdh;
-                this.Height = height;
+                XCoordinate = x;
+                YCoordinate = y;
+                Witdh = witdh;
+                Height = height;
             }
             else
             {

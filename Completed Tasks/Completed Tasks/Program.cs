@@ -1,7 +1,4 @@
-﻿using System;
-using Microsoft.Extensions.Configuration;
-using Training2;
-using Training3;
+﻿using Training5;
 
 namespace Completed_Taks
 {
@@ -9,7 +6,8 @@ namespace Completed_Taks
     {
         static void Main(string[] args)
         {
-            
+            Serializator ser = new Serializator();
+            ser.SerializeListOfCars();
         }
     }
 }

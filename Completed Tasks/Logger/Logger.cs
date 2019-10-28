@@ -43,7 +43,7 @@ namespace Log
         }
         #endregion
 
-        public static Logger getLogger()
+        public static Logger GetLogger()
         {
             return singletonInstance.Value;
         }
@@ -55,10 +55,8 @@ namespace Log
 
         void WriteLogToFile(string message)
         {
-            using (StreamWriter streamWriter = new StreamWriter(logFilePath, true, System.Text.Encoding.Default))
-            {
-                streamWriter.WriteLine(message);
-            }
+            using StreamWriter streamWriter = new StreamWriter(logFilePath, true, System.Text.Encoding.Default);
+            streamWriter.WriteLine(message);
         }
 
         // TODO: replace int by enum
@@ -87,10 +85,8 @@ namespace Log
 
         public void Read()
         {
-            using (StreamReader streamReader = new StreamReader(logFilePath))
-            {
-                Console.WriteLine(streamReader.ReadToEnd());
-            }
+            using StreamReader streamReader = new StreamReader(logFilePath);
+            Console.WriteLine(streamReader.ReadToEnd());
         }
     }
 }
