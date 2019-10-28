@@ -5,7 +5,7 @@ namespace Training4
 {
     public static class FileSearcher
     {
-        public static void SearchTxtFile (string partialFileName, string path)
+        public static void SearchTxtFile(string partialFileName, string path)
         {
             DirectoryInfo directory = new DirectoryInfo(path);
 

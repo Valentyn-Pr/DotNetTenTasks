@@ -5,7 +5,8 @@ namespace Training4
 {
     public class DirectoryInfoReader
     {
-        int tabCounter = 1;
+        private int tabCounter = 1;
+
         public void GetAllDirectoryInfo(string path)
         {
             DirectoryInfo directory = new DirectoryInfo(path);

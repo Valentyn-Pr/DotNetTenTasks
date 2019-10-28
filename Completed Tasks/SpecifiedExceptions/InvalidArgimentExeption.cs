@@ -1,9 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Training2
+﻿namespace Training2
 {
+    using System;
+
     public class InvalidArgumentException : Exception
     {
         public InvalidArgumentException(): this ("Invalid argument(s)")

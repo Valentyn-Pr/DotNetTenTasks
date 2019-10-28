@@ -1,7 +1,4 @@
-﻿using System;
-using System.IO;
-using Training4;
-using Training6;
+﻿using Training5;
 
 namespace Completed_Taks
 {
@@ -9,7 +6,8 @@ namespace Completed_Taks
     {
         static void Main(string[] args)
         {
-            FileSearcher.SearchTxtFile("mac", @"C:\Users\Valentyn\Desktop");
+            Serializator ser = new Serializator();
+            ser.SerializeListOfCars();
         }
     }
 }

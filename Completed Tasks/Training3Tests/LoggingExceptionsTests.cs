@@ -1,5 +1,5 @@
-using NUnit.Framework;
 using System;
+using NUnit.Framework;
 using Training3;
 
 namespace Training3Tests
@@ -21,8 +21,8 @@ namespace Training3Tests
             Assert.DoesNotThrow( () => exceptionLogging.DoSomeMath(0, 0));
         }
 
-        [TestCase (-1, 0)]
-        [TestCase (0, 3)]
+        [TestCase(-1, 0)]
+        [TestCase(0, 3)]
         public void DoSomeMathDoesThrowArgumentExceptionTest(int a, int b)
         {
             Assert.Throws<ArgumentException>(() => exceptionLogging.DoSomeMath(a, b));

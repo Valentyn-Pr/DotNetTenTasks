@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Training3
+﻿namespace Training3
 {
     public class StackOverflowGenerator
     {
@@ -9,10 +7,9 @@ namespace Training3
             do
             {
                 double x = 0;
-                GetStackOverflowException();
+                this.GetStackOverflowException();
             }
             while (true); 
         }
-
     }
 }
