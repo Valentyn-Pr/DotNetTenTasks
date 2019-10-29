@@ -1,4 +1,4 @@
-﻿using Training5;
+﻿using Training7;
 
 namespace Completed_Taks
 {
@@ -6,8 +6,8 @@ namespace Completed_Taks
     {
         static void Main(string[] args)
         {
-            Serializator ser = new Serializator();
-            ser.SerializeListOfCars();
+            Rectangle rec = new Rectangle(10, 10, 0, 0);
+            System.Console.WriteLine(rec.GetRectangleCreatedByCrossingWithRectangle(new Rectangle(4,10,6,0)).Height);
         }
     }
 }
