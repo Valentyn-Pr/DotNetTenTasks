@@ -11,7 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Training7\Training7.csproj" />
+    <ProjectReference Include="..\Variant2\Variant2.csproj" />
   </ItemGroup>
 
 </Project>
