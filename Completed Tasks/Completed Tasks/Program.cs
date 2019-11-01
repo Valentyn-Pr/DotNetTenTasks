@@ -6,7 +6,6 @@ namespace Completed_Taks
     {
         static void Main(string[] args)
         {
-            
         }
     }
 }

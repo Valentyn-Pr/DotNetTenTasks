@@ -3,39 +3,93 @@ using System.IO;
 using System.Collections;
 using System.Security.Cryptography;
 using System.Collections.Generic;
+using Microsoft.Extensions.Configuration;
+using OfficeOpenXml;
 
 namespace Variant2
 {
-    public class UnigueFiles
+    public partial class UnigueFilesSearcher
     {
-        public List<string> DuplicatedFiles = new List<string>();
+        int excelFileCurrentRowCounter = 1;
+        string path;
+        string resultFile;
+        System.Diagnostics.Stopwatch stopwatch = new System.Diagnostics.Stopwatch();
+
+        public UnigueFilesSearcher()
+        {
+            var builder = new ConfigurationBuilder()
+                .SetBasePath(Directory.GetCurrentDirectory())
+                .AddJsonFile("UnigueFilesSearcherConfiguration.json", optional: true, reloadOnChange: true);
+
+            IConfigurationRoot config = builder.Build();
+
+            path = config["FilePath"];
+            resultFile = config["ResultFile"];
+            var displaySource = config["DisplaySource"].ToLower();
+
+            if (displaySource == "console")
+            {
+                writingSource = WriteToConsole;
+            }
+            else if (displaySource == "file")
+            {
+                writingSource = WriteToFile;
+                using (var excelFile = new ExcelPackage())
+                {
+                    var ws = excelFile.Workbook.Worksheets.Add("Results");
+                    excelFile.SaveAs(new FileInfo(resultFile + "//result.xlsx"));
+                }
+            }
+            else throw new ArgumentException("Invalid config file");
+        }
+
+        delegate void Source(string message);
+        Source writingSource;
+
         public int DuplicatedFilesCounter { get; private set; } = 0;
         public string ElapsedTime { get; private set; }
-        public Hashtable UnigueFilesTable = new Hashtable();
+        public Hashtable UnigueFilesTable { get; private set; } = new Hashtable();
+        public Dictionary<string, string> DuplicatedFiles { get; private set; } = new Dictionary<string, string>();
 
-        System.Diagnostics.Stopwatch stopwatch = new System.Diagnostics.Stopwatch();
+        void WriteToConsole(string message)
+        {
+            Console.WriteLine(message);
+        }
+        void WriteToFile(string message)
+        {
+            using (var excelPackage = new ExcelPackage(new FileInfo(resultFile + "//result.xlsx")))
+            {
+                var workSheet = excelPackage.Workbook.Worksheets[0];
+
+                workSheet.Cells[$"A{excelFileCurrentRowCounter}"].Value = message;
+                excelFileCurrentRowCounter++;
+                excelPackage.Save();
+            }
+        }
         public void GetInfoAndElapsedTime()
         {
             stopwatch.Start();
-            GetAllDirectoryInfo(@"C:\Users\Valentyn\Desktop\New folder");
+            GetUnigueAndDuplicatedFiles(path);
             ElapsedTime = stopwatch.ElapsedMilliseconds.ToString();
 
-            Console.WriteLine("List of unigue files:");
-            foreach (var element in UnigueFilesTable.Values)
+            writingSource("List of unigue files:");
+            foreach (var unigueFile in UnigueFilesTable.Values)
             {
-                Console.WriteLine(element);
+                writingSource(unigueFile.ToString());
             }
 
-            Console.WriteLine($"Number of duplicated files: {DuplicatedFilesCounter}");
-            Console.WriteLine("Duplicated files:");
-            foreach (var element in DuplicatedFiles)
+            writingSource($"Number of duplicated files: {DuplicatedFilesCounter}");
+            writingSource("Duplicated files:");
+            // TODO: add duplicated pair
+            foreach (var duplicatedFile in DuplicatedFiles)
             {
-                Console.WriteLine(element);
+                writingSource(duplicatedFile.Value);
+                writingSource(" duplicate with -> " + UnigueFilesTable[duplicatedFile.Key]);
             }
-            Console.WriteLine($"Elapsed Time for this task: {ElapsedTime} ms");
+
+            writingSource($"Elapsed Time: {ElapsedTime} ms");
         }
-
-        private void GetAllDirectoryInfo(string path)
+        private void GetUnigueAndDuplicatedFiles(string path)
         {
             DirectoryInfo directory = new DirectoryInfo(path);
 
@@ -48,14 +102,16 @@ namespace Variant2
                 {
                     using (var stream = file.OpenRead())
                     {
+                        string hashKey = "";
                         try
                         {
                             var hash = md5.ComputeHash(stream);
-                            UnigueFilesTable.Add(BitConverter.ToString(hash), file.FullName);
+                            hashKey = BitConverter.ToString(hash);
+                            UnigueFilesTable.Add(hashKey, file.FullName);
                         }
-                        catch (ArgumentException e)
+                        catch (ArgumentException)
                         {
-                            DuplicatedFiles.Add(file.Name);
+                            DuplicatedFiles.Add(hashKey, file.FullName);
                             DuplicatedFilesCounter++;
                         }
                     }
@@ -66,7 +122,7 @@ namespace Variant2
             {
                 if (subDirectory.GetDirectories().Length != 0 || subDirectory.GetFiles().Length != 0)
                 {
-                    GetAllDirectoryInfo(subDirectory.FullName);
+                    GetUnigueAndDuplicatedFiles(subDirectory.FullName);
                 }
             }
         }
